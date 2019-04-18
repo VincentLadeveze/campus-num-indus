@@ -129,10 +129,13 @@ void StartDefaultTask(void const * argument)
 {
 
   /* USER CODE BEGIN StartDefaultTask */
+  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
+
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+	  HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+	  osDelay(500);
   }
   /* USER CODE END StartDefaultTask */
 }
@@ -150,6 +153,7 @@ void StartTask02(void const * argument)
   /* Infinite loop */
   for(;;)
   {
+    HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, GPIO_PIN_SET);
     osDelay(1);
   }
   /* USER CODE END StartTask02 */

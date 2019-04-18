@@ -16,7 +16,10 @@ Projet Atollic
 
 Code source
 -----------
-1) 1er lancement, ça boucle sur ...
+1) 1er lancement Ok
+2) Implémentation de 
+	a) allumage de USER LED Red au lancement de StartDefaultTask
+	b) allumage de USER LED Blue au lancement de StartTask02 puis blink LED à l'infini
 
 
 
