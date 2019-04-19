@@ -109,7 +109,7 @@ void MX_FREERTOS_Init(void) {
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
   /* definition and creation of blinkTask */
-  osThreadDef(blinkTask, StartTask02, osPriorityLow, 0, 128);
+  osThreadDef(blinkTask, StartTask02, osPriorityAboveNormal, 0, 128);
   blinkTaskHandle = osThreadCreate(osThread(blinkTask), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
@@ -129,10 +129,13 @@ void StartDefaultTask(void const * argument)
 {
 
   /* USER CODE BEGIN StartDefaultTask */
+  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
+
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+	  HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+	  osDelay(500);
   }
   /* USER CODE END StartDefaultTask */
 }
@@ -147,6 +150,8 @@ void StartDefaultTask(void const * argument)
 void StartTask02(void const * argument)
 {
   /* USER CODE BEGIN StartTask02 */
+  HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, GPIO_PIN_SET);
+
   /* Infinite loop */
   for(;;)
   {
