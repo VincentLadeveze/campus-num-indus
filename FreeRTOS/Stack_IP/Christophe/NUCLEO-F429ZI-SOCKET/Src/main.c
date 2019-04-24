@@ -368,10 +368,13 @@ void StartDefaultTask(void const * argument)
   MX_LWIP_Init();
 
   /* USER CODE BEGIN 5 */
+  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
+
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+	  HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+	  osDelay(500);
   }
   /* USER CODE END 5 */ 
 }
