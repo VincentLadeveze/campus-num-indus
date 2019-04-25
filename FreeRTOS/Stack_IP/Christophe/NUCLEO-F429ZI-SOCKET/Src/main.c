@@ -390,7 +390,7 @@ int sock;
 void SocketSendFunct(void const * argument)
 {
   /* USER CODE BEGIN SocketSendFunct */
-	int cpt = 0;
+	static int cpt = 0;
 
 	int ret;
 
@@ -462,8 +462,8 @@ void SocketHandlerFunct(void const * argument)
 		if ((sock = socket(AF_INET, SOCK_STREAM, 0)) >= 0)
 		    {
 			address.sin_family = AF_INET;
-			address.sin_port = htons(80);
-			address.sin_addr.s_addr = inet_addr("192.168.0.14");
+			address.sin_port = htons(65432);
+			address.sin_addr.s_addr = inet_addr("192.168.1.4");
 
 			if (lwip_connect(sock, (struct sockaddr *)&address, sizeof (address)) < 0)
 				{
