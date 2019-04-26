@@ -4,8 +4,8 @@ main.c:230:13:MX_USART3_UART_Init	8	static
 main.c:263:13:MX_USB_OTG_FS_PCD_Init	8	static
 main.c:298:13:MX_GPIO_Init	56	static
 main.c:365:6:StartDefaultTask	16	static
-main.c:387:6:SocketSendFunct	24	static
-main.c:421:6:SocketReceivedFunct	120	static
-main.c:450:6:SocketHandlerFunct	32	static
-main.c:488:6:HAL_TIM_PeriodElapsedCallback	16	static
-main.c:505:6:Error_Handler	4	static
+main.c:390:6:SocketSendFunct	24	static
+main.c:424:6:SocketReceivedFunct	120	static
+main.c:453:6:SocketHandlerFunct	32	static
+main.c:491:6:HAL_TIM_PeriodElapsedCallback	16	static
+main.c:508:6:Error_Handler	4	static
